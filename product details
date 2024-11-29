@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() 
+{
+    int n,i;
+    printf("Enter no of products to show:");
+    scanf("%d",&n);
+    struct plist
+    {
+        int sno;
+        char product [50];
+        float mrp;
+        float retail;
+    }
+    plist[i];
+    printf("enter the details of %d products:\n",n);
+    for(i=1;i<=n;i++)
+    {
+        printf("enter the details of %d products in the order of s.no, product name, mrp, retail price\n",i);
+        scanf("%d %s %f %f",&plist[i].sno,&plist[i]. product,&plist[i].mrp,&plist[i].retail);
+    }
+    printf("\n the product details are as follows\n ");
+    for(i=1;i<=n;i++)
+    {
+        printf("\n the product number is %d",plist[i].sno);
+        printf("\n the product name is:%s",plist[i]. product);
+        printf("\nthe product mrp is:%10.2f",plist[i].mrp);
+        printf("\n the product retailing price is:%10.2f",plist[i]. retail);
+
+ 
+    }
+}
