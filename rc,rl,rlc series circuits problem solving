@@ -1,0 +1,107 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+int main()
+{
+	int a;
+	float v,e,g,i,vr,vc,z,vrms,irms,xl,xc,ome,fre,l,r,b,p,q,c,s,f,vl;
+	printf("enter a number according to given below:\n if rc give 1\n if rl give 2\n if rlc give 3\n");
+	scanf("%d",&a);
+	switch(a)
+	{
+		case 1:
+			{
+				printf("rc series problem  is here.\n Enter vrms,r,c,fre values.\n c value must and should in f only not in micro faraday\n");		
+	 			scanf("%f %f %f %f",&vrms,&r,&c,&fre);
+				ome=2*3.14*fre;
+				xc=1/(ome*c);
+				z=sqrt(r*r+xc*xc);
+				irms=vrms/z;
+				s=vrms*irms;
+				vr=irms*r;
+				vc=irms*xc;
+				e=(r/z);
+				g=cos(e);
+				f=1/g;
+		    	p=vrms*irms*g;
+				q=vrms*irms*sin(f);
+				printf("\nthe value of omega= %.3f",ome);
+				printf("\nthe value of xc= %.3f",xc);
+				printf("\nthe value of z= %.3f",z);
+				printf("\nthe value of irms=%.3f",irms);
+		    	printf("\nthe value of vr=%.3f",vr);
+				printf("\nthe value of vc=%.3f",vc);
+				printf("\nthe value of cos(pi)= %.3f",g);
+	    		printf("\nthe value of sin(pi)=%.3f",sin(f));
+	    		printf("\nthe value of p= %.3f",p);
+	    		printf("\nthe value of q= %.3f",q);
+	    		printf("\nthe value of s= %.3f",s);
+	    		break;
+			}
+	    case 2:
+			{
+				printf("rl series problem  is here.\n Enter vrms,r,l,fre values.\n ");		
+	 			scanf("%f %f %f %f",&vrms,&r,&l,&fre);
+				ome=2*3.14*fre;
+				xl=ome*l;
+				z=sqrt(r*r+xl*xl);
+				irms=vrms/z;
+				s=vrms*irms;
+				vr=irms*r;
+				vl=irms*xl;
+				e=(r/z);
+				g=cos(e);
+				f=1/g;
+		    	p=vrms*irms*g;
+				q=vrms*irms*sin(f);
+				printf("\nthe value of omega= %.3f",ome);
+				printf("\nthe value of xl= %.3f",xl);
+				printf("\nthe value of z= %.3f",z);
+				printf("\nthe value of irms=%.3f",irms);
+		    	printf("\nthe value of vr=%.3f",vr);
+				printf("\nthe value of vc=%.3f",vc);
+				printf("\nthe value of cos(pi)= %.3f",g);
+	    		printf("\nthe value of sin(pi)=%.3f",sin(f));
+	    		printf("\nthe value of p= %.3f",p);
+	    		printf("\nthe value of q= %.3f",q);
+	    		printf("\nthe value of s= %.3f",s);
+	    		break;
+			}
+	    case 3:
+			{
+				printf("rlc series problem  is here.\n Enter vrms,r,c,fre,l values.\n c value must and should in f only not in micro faraday\n");		
+	 			scanf("%f %f %f %f %f",&vrms,&r,&c,&fre,&l);
+				ome=2*3.14*fre;
+				xc=1/(ome*c);
+				xl=ome*l;
+				z=sqrt(r*r+(xl-xc)*(xl-xc));
+				irms=vrms/z;
+				s=vrms*irms;
+				vr=irms*r;
+				vc=irms*xc;
+				vl=irms*xl;
+				e=(r/z);
+				g=cos(e);
+				f=1/g;
+		    	p=vrms*irms*g;
+				q=vrms*irms*sin(f);
+				printf("\nthe value of omega= %.3f",ome);
+				printf("\nthe value of xc= %.3f",xc);
+				printf("\nthe value of xl= %.3f",xl);
+				printf("\nthe value of z= %.3f",z);
+				printf("\nthe value of irms=%.3f",irms);
+		    	printf("\nthe value of vr=%.3f",vr);
+				printf("\nthe value of vc=%.3f",vc);
+				printf("\nthe value of vl=%.3f",vl);
+				printf("\nthe value of cos(pi)= %.3f",g);
+	    		printf("\nthe value of sin(pi)=%.3f",sin(f));
+	    		printf("\nthe value of p= %.3f",p);
+	    		printf("\nthe value of q= %.3f",q);
+	    		printf("\nthe value of s= %.3f",s);
+	    		break;
+			}
+		default:
+		printf("enter correct number from 1 to 3\n");
+		break;
+	}
+}
